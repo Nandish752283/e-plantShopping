@@ -1,8 +1,20 @@
+import { useState } from "react";
+
 function App() {
+  const [showProducts, setShowProducts] = useState(false);
+
   return (
     <div>
-      <h1>Paradise Nursery</h1>
-      <button>Get Started</button>
+      {!showProducts ? (
+        <div>
+          <h1>Welcome to Paradise Nursery</h1>
+          <button onClick={() => setShowProducts(true)}>
+            Get Started
+          </button>
+        </div>
+      ) : (
+        <h2>Product List Coming Here</h2>
+      )}
     </div>
   );
 }
